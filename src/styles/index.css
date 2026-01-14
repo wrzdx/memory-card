@@ -52,27 +52,27 @@ h1, h2, h3, h4, h5, h6 {
 
 /* General CSS */
 
+@font-face {
+   font-family: "Century Old Style Std";
+   src: url('../../public/CenturyOldStyleStd-Regular.woff2');
+   font-weight: normal;
+}
+
+@font-face {
+   font-family: "Century Old Style Std";
+   src: url('../../public/CenturyOldStyleStd-Bold.woff2');
+   font-weight: bold;
+}
+
+
+
 body {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Century Old Style Std", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   background-color: var(--milky);
   color: var(--black);
 
+
   /* Variables */
   --milky: #F3F4F6; 
-  --white: #FFFFFF;
   --black: #000000;
-  --red: #EF5555;
-  --orange: #F97316;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
