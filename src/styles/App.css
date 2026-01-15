@@ -20,11 +20,15 @@ button {
   cursor: pointer;
   will-change: transform;
   transition: transform 0.1s ease-in-out;
-
 }
 
-button:hover:not(:active) {
-  transform: scale(1.1);
+#root button:active {
+  transition: transform 0.05s ease-in-out;
+  transform: scale(0.95);
 }
 
-
+@media (hover: hover) {
+  button:hover {
+    transform: scale(1.1);
+  }
+}

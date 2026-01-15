@@ -50,7 +50,6 @@ function App() {
         <>
           {(pageId === "startPage" && (
             <StartPage
-              className="startPage"
               levels={LEVELS}
               setLevel={setLevel}
               runGamePage={runGamePage}

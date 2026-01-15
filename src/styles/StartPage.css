@@ -1,0 +1,42 @@
+.startPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 2.4rem;
+}
+
+.startPage img {
+  width: min(calc(32rem + 1vw), 100vh);
+  height: auto;
+  user-select: none;
+}
+
+.startPage h1 {
+  color: var(--bg-color);
+  font-size: min(calc(0.5rem + 10vw), calc(4rem + 1vw));
+  line-height: 1;
+  font-weight: 800;
+  text-shadow: 0px 0px 3px var(--bg-color);
+  text-wrap: nowrap;
+}
+
+.startPage .levels {
+  display: flex;
+  gap: min(1.2rem, 2vw);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.startPage .levels button {
+  background: var(--bg-color);
+  border: none;
+  padding: min(3vw, calc(0.25rem + 0.25vw)) min(3vw, calc(0.75rem + 0.25vw));
+  border-radius: min(0.8rem, 3vw);
+  font-size: min(5vw, calc(1rem + 1vw));
+  font-weight: 800;
+  color: var(--text-color);
+  box-shadow: 0px 0px 4px var(--bg-color);
+}
