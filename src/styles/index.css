@@ -53,26 +53,23 @@ h1, h2, h3, h4, h5, h6 {
 /* General CSS */
 
 @font-face {
-   font-family: "Century Old Style Std";
-   src: url('../../public/CenturyOldStyleStd-Regular.woff2');
-   font-weight: normal;
+   font-family: "Alegreya";
+   src: url('../../public/Alegreya-VariableFont_wght.ttf');
+   font-display: swap;
 }
-
-@font-face {
-   font-family: "Century Old Style Std";
-   src: url('../../public/CenturyOldStyleStd-Bold.woff2');
-   font-weight: bold;
-}
-
 
 
 body {
-  font-family: "Century Old Style Std", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  background-color: var(--milky);
-  color: var(--black);
+  font-family: "Alegreya", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background-color: #000;
+  color: var(--brown);
+  font-weight: bold;
 
 
-  /* Variables */
-  --milky: #F3F4F6; 
-  --black: #000000;
+  /* Variables */ 
+  --bg-color: var(--cream);
+  --text-color: var(--brown);
+
+  --cream: #f8de3c;
+  --brown: #412a1e;
 }

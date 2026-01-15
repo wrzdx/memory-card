@@ -1,0 +1,30 @@
+#root {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  overflow: hidden;
+}
+
+video {
+  position: fixed;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: 36% center;
+  filter: brightness(75%);
+}
+
+button {
+  cursor: pointer;
+  will-change: transform;
+  transition: transform 0.1s ease-in-out;
+
+}
+
+button:hover:not(:active) {
+  transform: scale(1.1);
+}
+
+

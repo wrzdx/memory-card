@@ -1,8 +1,14 @@
 import "./styles/App.css";
+import Video from "./assets/background.mp4";
+import Sound from "./assets/sounds/click.wav";
+import Music from "./assets/sounds/overtaken.mp3";
+
 import StartPage from "./pages/StartPage";
 import GamePage from "./pages/GamePage";
 import LoadingPage from "./pages/LoadingPage";
 import { useState } from "react";
+import Footer from "./components/Footer";
+import useSound from "use-sound";
 
 const LEVELS = {
   easy: 4,
@@ -26,7 +32,15 @@ function App() {
     setPageId("startPage");
   };
 
-
+  const [playClick] = useSound(Sound, {
+    volume: 0.25,
+    soundEnabled: isSoundPlaying,
+  });
+  const [playMusic, { stop }] = useSound(Music, {
+    volume: 0.5,
+    loop: true,
+    onend: () => setIsMusicPlaying(false),
+  });
 
   return (
     <>
@@ -36,7 +50,8 @@ function App() {
         <>
           {(pageId === "startPage" && (
             <StartPage
-              configs={configs}
+              className="startPage"
+              levels={LEVELS}
               setLevel={setLevel}
               runGamePage={runGamePage}
             />
@@ -52,12 +67,23 @@ function App() {
             ))}
           <Footer
             isMusicPlaying={isMusicPlaying}
-            setIsMusicPlaying={setIsMusicPlaying}
             isSoundPlaying={isSoundPlaying}
             setIsSoundPlaying={setIsSoundPlaying}
+            playClick={playClick}
+            playMusic={() => {
+              playMusic();
+              setIsMusicPlaying(true);
+            }}
+            stopMusic={() => {
+              stop();
+              setIsMusicPlaying(false);
+            }}
           />
         </>
       )}
+      <video autoPlay muted loop id="myVideo">
+        <source src={Video} type="video/mp4" />
+      </video>
     </>
   );
 }
