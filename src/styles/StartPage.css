@@ -18,7 +18,7 @@
   font-size: min(calc(0.5rem + 10vw), calc(4rem + 1vw));
   line-height: 1;
   font-weight: 800;
-  text-shadow: 0px 0px 3px var(--bg-color);
+  text-shadow: 0px 0px 2px var(--bg-color);
   text-wrap: nowrap;
 }
 

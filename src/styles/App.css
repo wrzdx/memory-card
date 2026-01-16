@@ -15,6 +15,7 @@ video {
   object-fit: cover;
   object-position: 36% center;
   filter: brightness(75%);
+  pointer-events: none;
 }
 
 button {
