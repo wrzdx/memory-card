@@ -2,7 +2,6 @@
   padding: 1.2rem 2.4rem;
   display: flex;
   gap: 0.75rem;
-  position: relative;
 }
 
 .footer button {
@@ -19,12 +18,15 @@
 
 .footer button:last-of-type {
   margin-left: auto;
+  padding: 0;
+  padding-top: 2px;
 }
 
 .footer .info {
   position: absolute;
   bottom: 0;
   right: 6rem;
+  will-change: transform, opacity;
 
   display: grid;
   grid-template-rows: auto auto 4.2rem;
@@ -33,13 +35,15 @@
   padding-left: 2.4rem;
   transition: opacity 0.3s, transform 0.3s;
   pointer-events: none;
+  /* animation: slideFade 0.3s forwards; */
 }
 
 .footer .info.hidden {
   opacity: 0;
-  transform: translateY(100%);
+  transform: translateY(130%);
   transition: opacity 0.3s, transform 0.3s;
-}
+  /* animation-direction: reverse; */
+} 
 
 .footer .info p {
   background-color: var(--bg-color);
@@ -56,5 +60,16 @@
   align-self: self-end;
   grid-column: 2;
   grid-row: 1 / span 3;
+}
+
+@keyframes slideFade {
+  0% {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 

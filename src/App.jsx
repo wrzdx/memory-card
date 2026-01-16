@@ -10,22 +10,24 @@ import { useState } from "react";
 import Footer from "./components/Footer";
 import useSound from "use-sound";
 
-const LEVELS = {
-  easy: 4,
-  medium: 7,
-  hard: 10,
-};
-
 function App() {
   const [pageId, setPageId] = useState("startPage");
   const [isLoading, setIsLoading] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [isSoundPlaying, setIsSoundPlaying] = useState(true);
   const [level, setLevel] = useState("easy");
+  const [gameId, setGameId] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
 
-  const runGamePage = () => {
-    setIsLoading(true);
+  const restart = () => {
     setPageId("gamePage");
+    setGameId(crypto.randomUUID());
+  }
+
+  const runNewGame = (selectedLevel) => {
+    setLevel(selectedLevel);
+    restart()
+    setBestScore(0)
   };
 
   const runStartPage = () => {
@@ -49,19 +51,17 @@ function App() {
       ) : (
         <>
           {(pageId === "startPage" && (
-            <StartPage
-              levels={LEVELS}
-              setLevel={setLevel}
-              runGamePage={runGamePage}
-            />
+            <StartPage runNewGame={runNewGame} playClick={playClick} />
           )) ||
             (pageId === "gamePage" && (
               <GamePage
-                configs={configs}
-                numberOfCards={LEVELS[level]}
-                setIsLoading={setIsLoading}
+                key={gameId}
+                level={level}
+                playClick={playClick}
                 runStartPage={runStartPage}
-                key={crypto.randomUUID()}
+                restart={restart}
+                bestScore={bestScore}
+                setBestScore={setBestScore}
               />
             ))}
           <Footer

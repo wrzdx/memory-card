@@ -11,65 +11,57 @@ import JINBEI from "./assets/characters/JINBEI.png";
 
 const characters = [
   {
-    id: crypto.randomUUID(),
     name: "Luffy",
     src: LUFFY,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Zoro",
     src: ZORO,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Nami",
     src: NAMI,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Usopp",
     src: USOPP,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Sanji",
     src: SANJI,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Chopper",
     src: CHOPPER,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Robin",
     src: ROBIN,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Franky",
     src: FRANKY,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Brook",
     src: BROOK,
     clicked: false,
   },
   {
-    id: crypto.randomUUID()(),
     name: "Jinbei",
     src: JINBEI,
     clicked: false,
   },
 ];
 
-export default characters;
+export default function getCharacters() {
+  return [...characters];
+}

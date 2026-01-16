@@ -54,7 +54,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @font-face {
    font-family: "Alegreya";
-   src: url('../../public/Alegreya-VariableFont_wght.ttf');
+   src: url('/Alegreya-VariableFont_wght.ttf');
    font-display: swap;
 }
 
