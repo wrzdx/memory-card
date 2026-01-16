@@ -10,7 +10,7 @@
   transform: translate(-50%);
   font-size: calc(1.5rem + 2vw);
   color: var(--bg-color);
-  text-shadow: 0px 0px 4px var(--bg-color);
+  text-shadow: 0px 0px 2px var(--bg-color);
 }
 
 .loading-page h1::after {
@@ -19,7 +19,7 @@
 }
 
 .loading-page img {
-  width: calc(5rem + 25vw);
+  width: calc(7rem + 25vw);
   position: absolute;
   bottom: 10%;
   right: 0;
