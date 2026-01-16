@@ -6,28 +6,36 @@ import Music from "./assets/sounds/overtaken.mp3";
 import StartPage from "./pages/StartPage";
 import GamePage from "./pages/GamePage";
 import LoadingPage from "./pages/LoadingPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import useSound from "use-sound";
 
 function App() {
   const [pageId, setPageId] = useState("startPage");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
   const [isSoundPlaying, setIsSoundPlaying] = useState(true);
   const [level, setLevel] = useState("easy");
   const [gameId, setGameId] = useState(0);
   const [bestScore, setBestScore] = useState(0);
 
+  useEffect(() => {
+    const r = setTimeout(() => {
+      setIsLoading(false);
+    }, 10000);
+
+    return () => clearTimeout(r);
+  }, []);
+
   const restart = () => {
     setPageId("gamePage");
     setGameId(crypto.randomUUID());
-  }
+  };
 
   const runNewGame = (selectedLevel) => {
     setLevel(selectedLevel);
-    restart()
-    setBestScore(0)
+    restart();
+    setBestScore(0);
   };
 
   const runStartPage = () => {
@@ -78,11 +86,11 @@ function App() {
               setIsMusicPlaying(false);
             }}
           />
+          <video autoPlay muted loop id="myVideo">
+            <source src={Video} type="video/mp4" />
+          </video>
         </>
       )}
-      <video autoPlay muted loop id="myVideo">
-        <source src={Video} type="video/mp4" />
-      </video>
     </>
   );
 }
