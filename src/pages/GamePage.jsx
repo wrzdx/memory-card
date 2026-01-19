@@ -30,7 +30,7 @@ function getChararctersToShow(numberOfCardsToShow, characters) {
     charactersToShow.push(characters[randomIndex]);
   }
 
-  const isThereUnclickedCharacter = characters.some((char) => !char.clicked);
+  const isThereUnclickedCharacter = charactersToShow.some((char) => !char.clicked);
   if (!isThereUnclickedCharacter) {
     const unclickedCharacter = getUnclickedCharacter();
     if (!unclickedCharacter) return charactersToShow;
